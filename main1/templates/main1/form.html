@@ -1,0 +1,25 @@
+{% extends 'main1/base.html' %}
+{% block content %}
+
+<style>
+    body {
+        background-image: url(https://mysbor.ru/files/1473272940139-coverimage.png);
+    }
+</style>
+    <center>
+        <img src="https://avatars.mds.yandex.net/i?id=f483e16c8a923dc4af8037e6d3fbe97d-4144443-images-thumbs&n=13" width="200" height="250">
+    <h1 class="display-3" style="background-color:#cda15a;;color:#da5d1ad9">Tirkelý</h1>
+    <form method = 'POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class = 'table-primary' width="550" height="550" style="border-radius:10px;background-color:#3ac39e;">
+            {% for field in registration %}
+            <tr>
+                <th>{{field.label}}</th>
+                <td>{{ field }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" class="btn btn-lg btn-warning">Submit</button>
+    </form>
+</center>
+{% endblock %}
